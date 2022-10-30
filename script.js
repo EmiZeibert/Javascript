@@ -28,14 +28,12 @@ switch (turno) {
         alert("opcion ingresada invalida")
         break
 }
-
 console.log("¿Hay algo más que te quisiera consultar?");
 let turno2;
 do {
     turno2 = prompt("Ingrese 1.Cobros/2.Fecha/0.Salir");
 } while (turno2 > 2 && turno2)
     ;
-
 if (turno2 == 1) {
     var hsTrabajo = parseInt(prompt("ingrese cantidad de horas de trabajo(solo numeros)"));
     var salario = 300 * hsTrabajo;
@@ -46,16 +44,14 @@ if (turno2 == 1) {
 
 } else if (turno2 == 2) {
     var ultNum = Number(prompt("ingrese su ultimo digito del DNI"));
-    
-}
-
-    
+    }
+   
 if (ultNum % 2 == 0) {        
       alert("Numero par" + " " +"fecha de cobro" + " " + 1 + "er" + " " + "dia habil");
     
 }
 else if (ultNum * 3) {
-    alert("Numero impar" + " "+"fecha de cobro" + " " + 5 + "to" + " " + "dia habil");
+    alert("Numero impar" + " " + "fecha de cobro" + " " + 5 + "to" + " " + "dia habil");
     alert("Hasta luego");
 
 }
