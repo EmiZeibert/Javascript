@@ -1,8 +1,14 @@
-var unaCadena = "¡Hola";
-var segCadena = " ";
-var otraCadena = "vamos a comenzar!";
-var result = unaCadena + segCadena + otraCadena;
-console.log(result);
+function Saludar() {   
+alert("¡Hola vamos a comenzar!");
+}
+const empresa={
+    nombre:"Coderhouse",
+    cantidadDeEmpleados:"N°"+" "+"empleados"+ " " + 100,
+    calle:"Buenos aires 1234"
+}
+console.log(empresa["nombre"])
+console.log(empresa["cantidadDeEmpleados"])
+console.log(empresa["calle"])
 let nombre = prompt("Ingrese su nombre");
 let apellido = prompt("Ingrese su apellido");
 let resultado = nombre + " " + apellido;
@@ -58,5 +64,6 @@ else if (ultNum * 3) {
 else if (turno2 == 0) {
     alert("Hasta luego");
 }
+
 
 
