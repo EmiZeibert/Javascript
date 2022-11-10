@@ -30,14 +30,9 @@ const productos = [
     { id: 3, nombre: "celular", precio: 99000 },
     { id: 4, nombre: "smartv", precio: 58000 },
     { id: 5, nombre: "tablet", precio: 28000 },
-    { id: 6, nombre: "monitor 22p", precio: 15000 },
+    { id: 6, nombre: "monitor 22p", precio: 15000 }
     
 ];
-function Productos(titulo,color){
-    this.titulo=titulo;
-    this.color=color;
-    
-}
 
 productos.forEach((producto) => {
     console.log(producto.nombre)
@@ -45,6 +40,14 @@ productos.forEach((producto) => {
    
 
 });
+
+
+
+function Productos(titulo,color){
+    this.titulo=titulo;
+    this.color=color;
+    
+}
 const producto1= new Productos ("notebook","gris")
 const producto2= new Productos ("parlante","negro")
 const producto3= new Productos ("celular","azul")
@@ -52,6 +55,12 @@ const producto4= new Productos ("smartv","negro")
 const producto5= new Productos ("tablet","blanca")
 const producto6= new Productos ("monitor","negro")
 console.log(producto1,producto2,producto3,producto4,producto5,producto6)
+let promociones = productos.filter(producto => producto.nombre === "smartv" && producto.precio < 59000)
+console.log(promociones) 
+
+for (const producto of promociones) {
+  console.log(producto.id, producto.nombre)
+}
 let opcion;
 do {
 opcion = prompt("¿Que producto quiere comprar? \n1.notebook\n2.parlante\n3.celular\n4.smartv\n5.tablet\n6.monitor22p");
