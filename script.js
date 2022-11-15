@@ -17,6 +17,12 @@ let nombre = prompt("Ingrese su nombre completo");
 let resultado = nombre;
 console.log(resultado)
 let salida = "Bienvenida/o" + " " + nombre;
+function sumar(descuento1, descuento2){
+    return descuento1 + descuento2
+}
+let result = sumar (2500, 2500);
+console.log(result)
+
 function Descuento() {
     console.log("¡Solo por hoy $5000 de descuento!");
 
@@ -58,7 +64,7 @@ console.log(producto1, producto2, producto3, producto4, producto5, producto6)
 let opcion;
 do {
     opcion = prompt("¿Que producto quiere comprar? \n1.Notebook\n2.Parlante\n3.Parlante azul\n4.Celular\n5.Smartv\n6.Tablet\n7.Monitor22p");
-} while (opcion > 7 && opcion)
+} while (opcion > 7 || opcion == 0  && opcion)
     ;
  
 switch (opcion) {
@@ -122,7 +128,7 @@ switch (opcion) {
         alert("Monto a pagar" + " " + subtotal.toFixed(2));
         break;
 
-    default: alert("producto inexistente")
+    default: alert("Producto inexistente")
         break;
 }
 
