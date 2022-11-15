@@ -21,14 +21,8 @@ function sumar(descuento1, descuento2){
     return descuento1 + descuento2
 }
 let result = sumar (2500, 2500);
-console.log(result)
 
-function Descuento() {
-    console.log("¡Solo por hoy $5000 de descuento!");
-
-}
-Descuento();
-alert(salida);
+console.log("¡Solo por hoy"+" "+ result +" " + "pesos de descuento!")
 
 const productos = [
     { id: 1, nombre: "notebook", precio: 100000 },
