@@ -1,3 +1,5 @@
+/*let h1 = document.getElementsByClassName("titulo");
+console.log(h1.innerHTML);
 function Saludar() {
     console.log("¡Hola vamos a comenzar!");
 
@@ -13,6 +15,7 @@ console.log(empresa["nombre"])
 console.log(empresa["calle"])
 console.log(empresa["informacion"])
 
+
 let nombre = prompt("Ingrese su nombre completo");
 let resultado = nombre;
 console.log(resultado)
@@ -23,15 +26,16 @@ function sumar(descuento1, descuento2){
 let result = sumar (2500, 2500);
 
 console.log("¡Solo por hoy"+" "+"$"+ result +" " + "de descuento!")
-
+const div = document.createElement("div");
 const productos = [
-    { id: 1, nombre: "notebook", precio: 100000 },
-    { id: 2, nombre: "parlante", precio: 20000 },
-    { id: 3, nombre: "parlante", precio: 15000 },
-    { id: 4, nombre: "celular", precio: 99000 },
-    { id: 5, nombre: "smartv", precio: 58000 },
-    { id: 6, nombre: "tablet", precio: 28000 },
-    { id: 7, nombre: "monitor 22p", precio: 15000 }
+    { id: 1, nombre: "notebook", precio: 85000 },
+    { id: 2, nombre: "notebook", precio: 65000 },
+    { id: 3, nombre: "parlante", precio: 10500 },
+    { id: 4, nombre: "parlante", precio: 20600 },
+    { id: 5, nombre: "celular samsung A03", precio: 52000 },
+    { id: 6, nombre: "celular motorola E20", precio: 34000 },
+    { id: 7, nombre: "smartv 43", precio: 73000 },
+    { id: 8, nombre: "smartv 32", precio: 45000 }
 
 ];
 
@@ -141,7 +145,7 @@ function Saludar() {
 Saludar();
 
 let indice = opcion.indexOf("7");
-console.log(indice);
+console.log(indice);*/
 
 
 

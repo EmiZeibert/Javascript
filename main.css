@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2? family= Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,300;1,700 & display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+ul{
+    list-style-type:none ;
+}
+a { text-decoration: none; }
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: rgb(221, 22, 22);
+
+}
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    color: black;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    }
+.logo{
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+.principal{
+    color:rgb(255, 149, 149) ;
+}
+.footer{
+    color: rgb(51, 48, 48);
+    font-size: 500;
+}
+main{
+    background-color: white;
+    margin: 1rem;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    margin-left:0 ;
+}
+.contenedor-productos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.producto-imagen{
+    max-width: 100%;
+    gap: 1.2rem;
+    border: solid 3px;
+    border-radius: 10px;
+    border-color:black;
+}
