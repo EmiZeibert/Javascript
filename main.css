@@ -1,19 +1,23 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
-ul{
-    list-style-type:none ;
+
+.logo{
+    color: rgb(102, 66, 160);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 25px;
 }
-a { text-decoration: none; }
-.contenedor{
+
+.contenedor {
     display: grid;
     grid-template-columns: 1fr 4fr;
     background-color: rgb(238, 176, 176);
 
 }
+
 aside {
     display: flex;
     flex-direction: column;
@@ -24,36 +28,41 @@ aside {
     position: sticky;
     top: 0;
     height: 100vh;
-    }
-.logo{
+}
+
+.logo {
     font-weight: 500;
     font-size: 1.5rem;
-    
+
 }
-.principal{
-    color:rgb(255, 149, 149) ;
+
+.principal {
+    color: rgb(255, 149, 149);
     margin-bottom: 2rem;
 }
-.footer{
+
+.footer {
     color: rgb(51, 48, 48);
     font-size: 500;
 }
-main{
+
+main {
     background-color: white;
     margin: 1rem;
     border-radius: 1.5rem;
     padding: 2.5rem;
-    margin-left:0 ;
+    margin-left: 0;
 }
-.menu{
+
+.menu {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    
+
 
 }
 
-.boton-menu{
+.boton-menu {
     display: flex;
     gap: 4px;
     background-color: transparent;
@@ -62,38 +71,42 @@ main{
     padding: 1rem;
 
 }
-.boton-carrito{
+
+.boton-carrito {
     margin-top: 5px;
 
 }
-.boton-categoria.active{
+
+.boton-categoria.active {
     background-color: rgb(156, 108, 108);
     width: 100%;
-    border-top-left-radius:10px ;
-    border-bottom-left-radius:10px ;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 
 }
-i.bi-hand-index-thumb{
-    transform: rotateZ(100deg) ;
+
+i.bi-hand-index-thumb {
+    transform: rotateZ(100deg);
 }
 
 
-.contenedor-productos{
+.contenedor-productos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    
+
 }
-.producto-imagen{
+
+.producto-imagen {
     max-width: 100%;
     border-radius: 1rem;
     gap: 1.5rem;
-    
+
 }
-.producto-detalles{
+
+.producto-detalles {
     display: flex;
     flex-direction: column;
-   
     gap: 5px;
     background-color: rgb(238, 176, 176);
     color: black;
@@ -102,53 +115,116 @@ i.bi-hand-index-thumb{
     width: 75%;
     margin-top: -2rem;
     position: relative;
-    
-    
-}
-.producto-agregar{
-    border: 0;
-    border-radius: 15px;
-    background-color:white ;
-    padding: 4px;
-    text-transform: uppercase;
-   
 
 }
-.producto-titulo{
+
+.producto-agregar {
+    border: 0;
+    border-radius: 15px;
+    background-color: white;
+    padding: 4px;
+    text-transform: uppercase;
+
+
+}
+
+.producto-titulo {
     font-size: 18px;
 
 }
+
 /**carrito**/
-.tPrincipal{
-    color:rgb(238, 176, 176) ;
+
+.tPrincipal {
+    color: rgb(238, 176, 176);
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
 
 }
-.carrito-compras{
-display: flex;
-flex-direction: column;
-gap:5px;
+
+.contenedor-carrito > div {
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+
 }
-.carrito-producto{
+
+.carrito-productos {
     display: flex;
     justify-content: space-between;
     background-color: black;
     color: white;
     padding-right: 1rem;
-    padding: .6rem;
+    padding: .5rem;
     border-radius: 10px;
+    
 
 }
-.carrito-pruducto-eliminar{
-    border: 0;
-    background-color: transparent;
-    color: red;
-    cursor: pointer;
-
+.carrito-accion-vaciar{
+   margin-top: 20px;
+   display: flex;
+    background-color:black;
+    color: white;
+    border-radius: 15px;
+    
 }
-.carrito-producto img{
+
+.carrito-productos img {
     width: 6rem;
     border-radius: 1rem;
 }
+.carrito-accion {
+    display: flex;
+    justify-content: space-between;
+}
+
+.carrito-accion-der{
+    display: flex;
+}
+.carrito-accion-total {
+    display: flex;
+    padding: 1rem;
+    text-transform: uppercase;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    gap: 1rem;
+}
+.carrito-accion-comprar {
+    border: 0;
+     padding: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.disabled {
+    display: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(102, 66, 160);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,133 +1,134 @@
 const productos = [
     {
-        id: "Celulares-notebook",
+        id: "notebook-Exo",
         titulo: "Notebook Exo",
-        precio: 85000,
-        categoria: {
+        imagen: "../imagenes/notebook65000.jpg",
+                categoria: {
             nombre: "Celulares-notebook",
             id: "Celulares-notebook"
         },
-        imagen: "./imagenes/notebook65000.jpg"
+        precio: 85000
     },
     {
-        id: "Celulares-notebook",
+        id: "notebook-Acer",
         titulo: "Notebook Acer",
-        precio: 65000,
-        categoria: {
+        imagen: "../imagenes/notebook85000.jpg",
+                categoria: {
             nombre: "Celulares-notebook",
             id: "Celulares-notebook"
         },
-        imagen: "./imagenes/notebook85000.jpg"
+        precio: 65000
     },
     {
-        id: "Audio-video",
+        id: "parlante-Chico",
         titulo: "Parlante chico",
-        precio: 10500,
-        categoria: {
+        imagen: "../imagenes/parlante10500.jpg",
+                categoria: {
             nombre: "Audio-video",
             id: "Audio-video"
         },
-        imagen: "./imagenes/parlante10500.jpg"
+        precio: 10500
     },
     {
-        id: "Audio-video",
+        id: "parlante-Grande",
         titulo: "Parlante grande",
-        precio: 20600,
-        categoria: {
+        imagen: "../imagenes/parlante20000.jpg",
+                categoria: {
             nombre: "Audio-video",
             id: "Audio-video"
         },
-        imagen: "./imagenes/parlante20000.jpg"
+        precio: 20600
     },
     {
-        id: "Celulares-notebook",
+        id: "celular-Samsung A03",
         titulo: "Celular samsung A03",
-        precio: 52000,
+        imagen: "../imagenes/samsunga03.jpg",
+       
         categoria: {
             nombre: "Celulares-notebook",
             id: "Celulares-notebook"
         },
-        imagen: "./imagenes/samsunga03.jpg"
+        precio: 52000
     },
     {
-        id: "Celulares-notebook",
+        id: "celular-Motorola-e20",
         titulo: "Celular motorola E20",
-        precio: 34000,
-        categoria: {
+        imagen: "../imagenes/motorolae20.jpg",
+                categoria: {
             nombre: "Celulares-notebook",
             id: "Celulares-notebook"
         },
-        imagen: "./imagenes/motorolae20.jpg"
+        precio: 34000
     },
     {
-        id: "Audio-video",
+        id: "smartv-43p",
         titulo: "Smartv 43p",
-        precio: 73000,
+        imagen: "../imagenes/smart43.jpg",
+        
         categoria: {
             nombre: "Audio-video",
             id: "Audio-video"
         },
-        imagen: "./imagenes/smart43.jpg"
+        precio: 73000
     },
     {
-        id: "Audio-video",
+        id: "smartv-32p",
         titulo: "Smartv 32p",
-        precio: 45000,
-        categoria: {
+        imagen: "../imagenes/smart32.jpg",
+                categoria: {
             nombre: "Audio-video",
             id: "Audio-video"
         },
-        imagen: "./imagenes/smart32.jpg"
+        precio: 45000
     },
     {
-        id: "Audio-video",
+        id: "auricular-Newvision",
         titulo: "Auricular Newvision",
-        precio: 2500,
-        categoria: {
+        imagen: "../imagenes/auricular2500.jpg",
+                categoria: {
             nombre: "Audio-video",
             id: "Audio-video"
         },
-        imagen: "./imagenes/auricular2500.jpg"
+        precio: 2500
     },
     {
-        id: "Audio-video",
+        id: "auricular-Redragon",
         titulo: "Auricular Redragon",
-        precio: 5000,
+        imagen: "../imagenes/auricular5000.jpg",
+        
         categoria: {
             nombre: "Audio-video",
             id: "Audio-video"
         },
-        imagen: "./imagenes/auricular5000.jpg"
+        precio: 5000
     },
     {
-        id: "Audio-video",
+        id: "tablet",
         titulo: "Tablet",
-        precio: 45000,
+        imagen: "../imagenes/tablet45000.jpg",
         categoria: {
             nombre: "Audio-video",
             id: "Audio-video"
         },
-        imagen: "./imagenes/tablet45000.jpg"
+        precio: 45000
     },
     {
-        id: "Audio-video",
+        id: "tablet-Lenovo",
         titulo: "Tablet Lenovo",
-        precio: 54000,
+        imagen: "../imagenes/tablet54000.jpg",
         categoria: {
             nombre: "Audio-video",
             id: "Audio-video"
         },
-        imagen: "./imagenes/tablet54000.jpg"
+        precio: 54000
     }
-
-
 
 ];
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategoria = document.querySelectorAll(".boton-categoria");
 let agregarP = document.querySelectorAll(".producto-agregar");
 const tPrincipal = document.querySelector("#tPrincipal");
-
+const numeroCarri = document.querySelector("#numeroCarri");
 
 function cargarProductos(elegirProductos) {
     contenedorProductos.innerHTML = "";
@@ -140,17 +141,19 @@ function cargarProductos(elegirProductos) {
                     <div class="producto-detalles">
                         <h3 class="producto-titulo">${producto.titulo}</h3>
                         <p class="producto-precio">$${producto.precio}</p>
-                        <button class="producto-agregar" id=${producto.id} "">Agregar</button>
-                    </div>
-    `;
+                        <button class="producto-agregar" id=${producto.id}>Agregar</button>
+                    </div>`;
+
         contenedorProductos.append(div);
     })
     actBotones();
 }
+
 cargarProductos(productos);
 
 botonesCategoria.forEach(boton => {
     boton.addEventListener("click", (e) => {
+
         botonesCategoria.forEach(boton => boton.classList.remove("active"));
         e.currentTarget.classList.add("active");
 
@@ -166,30 +169,46 @@ botonesCategoria.forEach(boton => {
 
     })
 
-})
+});
+
 function actBotones() {
     agregarP = document.querySelectorAll(".producto-agregar");
     agregarP.forEach(boton => {
         boton.addEventListener("click", agregarAlCarrito);
     });
 }
-const productoElegidos = [];
+let productoElegidos;
+
+let productosEnCarritoLS = localStorage.getItem("productos-elegidos");
+
+if (productosEnCarritoLS) {
+    productoElegidos = JSON.parse(productosEnCarritoLS);
+    actualizarNumerito();
+} else {
+    productoElegidos = [];
+}
+
 function agregarAlCarrito(e) {
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton)
-    if( productoElegidos.some(producto => producto.id === idBoton)){
-        const buscar= productoElegido.findIndex(producto => producto.id === idBoton);
-        productoElegido[buscar].cantidad++
-       
-    }else{
-        productoAgregado.cantidad= 1;
+
+    if (productoElegidos.some(producto => producto.id === idBoton)) {
+        const buscar = productoElegidos.findIndex(producto => producto.id === idBoton);
+        productoElegidos[buscar].cantidad++;
+
+    } else {
+        productoAgregado.cantidad = 1;
         productoElegidos.push(productoAgregado);
     }
-   
+
+    cantidadProductosCarrito();
+    localStorage.setItem("productos-elegidos", JSON.stringify(productoElegidos));
+
 }
-
-
-
+function cantidadProductosCarrito() {
+    let cambioNumeros = productoElegidos.reduce((acc, producto) => acc + producto.cantidad, 0);
+    numeroCarri.innerText = cambioNumeros;
+}
 
 
 
