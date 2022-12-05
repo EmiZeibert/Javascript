@@ -177,13 +177,14 @@ function actBotones() {
         boton.addEventListener("click", agregarAlCarrito);
     });
 }
+
 let productoElegidos;
 
 let productosEnCarritoLS = localStorage.getItem("productos-elegidos");
 
 if (productosEnCarritoLS) {
     productoElegidos = JSON.parse(productosEnCarritoLS);
-    actualizarNumerito();
+    cantidadProductosCarrito();
 } else {
     productoElegidos = [];
 }
