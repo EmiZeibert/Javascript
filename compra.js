@@ -8,6 +8,7 @@ const contenedorCarritoVacio = document.querySelector("#carrito-vacio");
 const vaciarCarrito = document.querySelector("#carrito-accion-vaciar");
 let botonEliminar = document.querySelectorAll(".carrito-eliminar");
 const contenedorTotal = document.querySelector("#total");
+const comprarAhora = document.querySelector("#carrito-accion-comprar");
 
 
 function productosCarrito() {
@@ -78,17 +79,35 @@ function eliminarDelcarrito(e) {
     localStorage.setItem("productos-elegidos", JSON.stringify(productoElegidos));
 }
 
-vaciarCarrito.addEventListener("click", carritovaciar);
-
+vaciarCarrito.addEventListener("click",carritovaciar);
 function carritovaciar() {
-    productoElegidos.length = 0;
+    productoElegidos.length =0;
     localStorage.setItem("productos-elegidos", JSON.stringify(productoElegidos));
-    productosCarrito();
+    productosCarrito();  
 }
 
-function actTotal (){
+function actTotal() {
     const totalProducto = productoElegidos.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
     total.innerText = `$${totalProducto}`;
 }
+
+comprarAhora.addEventListener("click", comprarCarrito);
+function comprarCarrito() {
+
+    productoElegidos.length = 0;
+    localStorage.setItem("productos-elegidos", JSON.stringify(productoElegidos));
+    contenedorCarritoVacio.classList.add("disabled");
+    contenedorCarritoProductos.classList.add("disabled");
+    contenedorCarritoAccion.classList.add("disabled");
+    contenedorCarritoComprado.classList.remove("disabled");
+
+}
+
+    
+
+
+
+
+
 
 

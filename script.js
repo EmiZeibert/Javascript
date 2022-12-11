@@ -21,7 +21,7 @@ const productos = [
     },
     {
         id: "parlante-Chico",
-        titulo: "Parlante chico",
+        titulo: "Parlante Chico",
         imagen: "../imagenes/parlante10500.jpg",
                 categoria: {
             nombre: "Audio-video",
@@ -31,7 +31,7 @@ const productos = [
     },
     {
         id: "parlante-Grande",
-        titulo: "Parlante grande",
+        titulo: "Parlante Grande",
         imagen: "../imagenes/parlante20000.jpg",
                 categoria: {
             nombre: "Audio-video",
@@ -41,7 +41,7 @@ const productos = [
     },
     {
         id: "celular-Samsung A03",
-        titulo: "Celular samsung A03",
+        titulo: "Celular SamsungA03",
         imagen: "../imagenes/samsunga03.jpg",
        
         categoria: {
@@ -52,7 +52,7 @@ const productos = [
     },
     {
         id: "celular-Motorola-e20",
-        titulo: "Celular motorola E20",
+        titulo: "Celular MotorolaE20",
         imagen: "../imagenes/motorolae20.jpg",
                 categoria: {
             nombre: "Celulares-notebook",
@@ -104,7 +104,7 @@ const productos = [
     },
     {
         id: "tablet",
-        titulo: "Tablet",
+        titulo: "Tablet Lenovo",
         imagen: "../imagenes/tablet45000.jpg",
         categoria: {
             nombre: "Audio-video",
@@ -201,17 +201,23 @@ function agregarAlCarrito(e) {
         productoAgregado.cantidad = 1;
         productoElegidos.push(productoAgregado);
     }
-
+    
     cantidadProductosCarrito();
     localStorage.setItem("productos-elegidos", JSON.stringify(productoElegidos));
-
+   
 }
 function cantidadProductosCarrito() {
     let cambioNumeros = productoElegidos.reduce((acc, producto) => acc + producto.cantidad, 0);
     numeroCarri.innerText = cambioNumeros;
 }
 
-
+contenedorProductos.addEventListener("click", () => {
+    Swal.fire({
+        title: 'Agregado',
+        text: 'tu producto ya esta en el carrito!',
+        icon: 'success'
+           })
+})
 
 
 
